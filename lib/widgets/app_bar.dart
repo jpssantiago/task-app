@@ -5,7 +5,7 @@ AppBar buildAppBar() {
     backgroundColor: Colors.white,
     elevation: 1, // Default = 4
     title: Text(
-      'Tasks',
+      'Tarefas',
       style: TextStyle(
         color: Colors.black,
       ),

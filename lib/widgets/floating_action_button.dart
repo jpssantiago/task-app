@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_app/widgets/add_task_modal.dart';
+
+import 'package:task_app/modals/add_task/add_task_modal.dart';
 
 FloatingActionButton buildFloatingActionButton(BuildContext context) {
   return FloatingActionButton(

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Task {
   String title;
   DateTime initialDate;
@@ -39,11 +41,10 @@ class Task {
     return '${minutes}m';
   }
 
+  // TODO: Mostrar calendário pra escolher data final da tarefa.
   static Task createTask(String title) {
     return Task(
       title: title,
-      initialDate: DateTime.now(),
-      finalDate: null,
       status: TaskStatus.active,
     );
   }
