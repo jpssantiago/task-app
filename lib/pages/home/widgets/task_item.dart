@@ -33,24 +33,6 @@ class TaskItem extends StatelessWidget {
       }
     }
 
-    Widget showTimeLeft() {
-      if (task.finalDate == null) {
-        return Icon(
-          Icons.alarm_off,
-          color: Colors.white,
-        );
-      }
-
-      return Text(
-        task.getTimeLeft(DateTime.now()),
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-        ),
-      );
-    }
-
     return ListTile(
       leading: Container(
         width: 36,
@@ -65,7 +47,10 @@ class TaskItem extends StatelessWidget {
                   Icons.check,
                   color: Colors.white,
                 )
-              : showTimeLeft(),
+              : Icon(
+                  Icons.alarm_off,
+                  color: Colors.white,
+                ),
         ),
       ),
       title: Text(

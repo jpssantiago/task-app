@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
           height: size.height,
           color: Colors.white,
           child: TaskList(
-            tasks: provider.tasks,
+            tasks: provider.getTasks(),
           ),
         ),
         floatingActionButton: buildFloatingActionButton(context),

@@ -5,12 +5,12 @@ class TestData {
     return [
       Task(
         title: 'Reunião',
-        finalDate: DateTime(2021, 4, 3, 19), // 19:00
+        createdDate: DateTime.now(),
         status: TaskStatus.active,
       ),
       Task(
         title: 'Terminar relatórios',
-        finalDate: DateTime(2021, 4, 4, 15), // 15:00
+        createdDate: DateTime.now(),
         status: TaskStatus.active,
       ),
     ];
