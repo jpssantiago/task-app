@@ -10,7 +10,7 @@ class TaskProvider extends ChangeNotifier {
   DateTime get selectedDate => _selectedDate;
   // List<Task> get tasks => _tasks;
 
-  void changeSelectedDate(DateTime date) {
+  void setDate(DateTime date) {
     _selectedDate = date;
 
     notifyListeners();

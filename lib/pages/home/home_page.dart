@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
 
     return Consumer<TaskProvider>(
       builder: (context, provider, child) => Scaffold(
-        appBar: buildAppBar(),
+        appBar: buildAppBar(provider),
         body: Container(
           width: size.width,
           height: size.height,
