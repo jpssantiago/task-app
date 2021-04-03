@@ -12,6 +12,32 @@ class TaskList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (tasks.length == 0) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Sem tarefas por enquanto.',
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+            Container(height: 10),
+            GestureDetector(
+              onTap: () => print('To be implemented yet.'),
+              child: Text(
+                'Você deseja adicionar alguma tarefa recente?',
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return ListView.builder(
       itemCount: tasks.length,
       itemBuilder: (context, index) {
