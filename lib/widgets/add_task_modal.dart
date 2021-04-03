@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'package:task_app/models/task.dart';
+import 'package:task_app/providers/task_provider.dart';
 
 void showAddTaskModal(BuildContext context) {
+  final TextEditingController controller = TextEditingController();
+
+  void addTask() {
+    String text = controller.text;
+
+    if (text == null || text == '') return;
+
+    var provider = Provider.of<TaskProvider>(context, listen: false);
+    provider.addTask(Task.createTask(text));
+
+    Navigator.of(context).pop();
+  }
+
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
@@ -13,9 +30,14 @@ void showAddTaskModal(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            buildTextField(size),
+            buildTextField(
+              controller: controller,
+              size: size,
+            ),
             Container(height: 10),
-            buildRowButtons(),
+            buildRowButtons(
+              onPressed: addTask,
+            ),
           ],
         ),
       );
@@ -23,7 +45,7 @@ void showAddTaskModal(BuildContext context) {
   );
 }
 
-Padding buildTextField(Size size) {
+Padding buildTextField({TextEditingController controller, Size size}) {
   return Padding(
     padding: const EdgeInsets.only(
       left: 30,
@@ -34,6 +56,7 @@ Padding buildTextField(Size size) {
       width: size.width,
       height: 60,
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           labelText: 'Nome da tarefa...',
           border: InputBorder.none,
@@ -44,7 +67,7 @@ Padding buildTextField(Size size) {
   );
 }
 
-Padding buildRowButtons() {
+Padding buildRowButtons({VoidCallback onPressed}) {
   return Padding(
     padding: const EdgeInsets.only(
       left: 30,
@@ -60,7 +83,7 @@ Padding buildRowButtons() {
         ),
         TextButton(
           child: Text('Salvar'),
-          onPressed: () {},
+          onPressed: onPressed,
         )
       ],
     ),

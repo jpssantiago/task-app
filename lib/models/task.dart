@@ -38,6 +38,15 @@ class Task {
 
     return '${minutes}m';
   }
+
+  static Task createTask(String title) {
+    return Task(
+      title: title,
+      initialDate: DateTime.now(),
+      finalDate: null,
+      status: TaskStatus.active,
+    );
+  }
 }
 
 enum TaskStatus {

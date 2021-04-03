@@ -33,7 +33,14 @@ class TaskItem extends StatelessWidget {
       }
     }
 
-    Text showTimeLeft() {
+    Widget showTimeLeft() {
+      if (task.finalDate == null) {
+        return Icon(
+          Icons.alarm_off,
+          color: Colors.white,
+        );
+      }
+
       return Text(
         task.getTimeLeft(DateTime.now()),
         style: TextStyle(
