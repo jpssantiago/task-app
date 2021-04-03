@@ -19,6 +19,7 @@ class TaskItem extends StatelessWidget {
 
     void toggleCompleted(bool value) {
       var provider = Provider.of<TaskProvider>(context, listen: false);
+
       if (value) {
         provider.setStatus(
           task: task,
@@ -40,9 +41,25 @@ class TaskItem extends StatelessWidget {
           color: Colors.blue,
           shape: BoxShape.circle,
         ),
+        child: Center(
+          child: Text(
+            task.getTimeLeft(DateTime.now()),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
-      title:
-          Text(task.status == TaskStatus.completed ? 'completed' : task.title),
+      title: Text(
+        task.title,
+        style: TextStyle(
+          decoration: task.status == TaskStatus.completed
+              ? TextDecoration.lineThrough
+              : TextDecoration.none,
+        ),
+      ),
       trailing: Checkbox(
         value: isCompleted(),
         onChanged: toggleCompleted,
