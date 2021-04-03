@@ -14,8 +14,7 @@ class AddTask extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController _controller = TextEditingController();
 
-    void addTask() {
-      String text = _controller.text;
+    void addTask(String text) {
       if (text == null || text == '') {
         showDialogMessage(
           context: context,
@@ -43,12 +42,12 @@ class AddTask extends StatelessWidget {
         children: [
           TextFieldContainer(
             controller: _controller,
-            onSubmitted: () => addTask(),
+            onSubmitted: addTask,
           ),
           Container(height: 10),
           ExpandedButton(
             text: 'Salvar',
-            onTap: addTask,
+            onTap: () => addTask(_controller.text),
           ),
         ],
       ),

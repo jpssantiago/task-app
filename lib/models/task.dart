@@ -13,6 +13,7 @@ class Task {
     return Task(
       title: title,
       status: TaskStatus.active,
+      createdDate: DateTime.now(),
     );
   }
 }

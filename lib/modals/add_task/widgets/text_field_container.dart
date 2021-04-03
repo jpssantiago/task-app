@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TextFieldContainer extends StatelessWidget {
   final TextEditingController controller;
-  final VoidCallback onSubmitted;
+  final Function(String) onSubmitted;
 
   TextFieldContainer({
     @required this.controller,
@@ -29,6 +29,7 @@ class TextFieldContainer extends StatelessWidget {
             border: InputBorder.none,
           ),
           autofocus: true,
+          onSubmitted: onSubmitted,
         ),
       ),
     );
