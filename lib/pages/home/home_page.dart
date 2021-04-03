@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
             tasks: provider.tasks,
           ),
         ),
-        floatingActionButton: buildFloatingActionButton(),
+        floatingActionButton: buildFloatingActionButton(context),
       ),
     );
   }
