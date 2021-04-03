@@ -6,6 +6,7 @@ import 'package:task_app/modals/add_task/widgets/text_field_container.dart';
 
 import 'package:task_app/models/task.dart';
 import 'package:task_app/providers/task_provider.dart';
+import 'package:task_app/widgets/alert_dialog.dart';
 import 'package:task_app/widgets/snack_bar.dart';
 
 class AddTask extends StatelessWidget {
@@ -16,6 +17,10 @@ class AddTask extends StatelessWidget {
     void addTask() {
       String text = _controller.text;
       if (text == null || text == '') {
+        showDialogMessage(
+          context: context,
+          message: 'Informe um nome para a tarefa.',
+        );
         return;
       }
 
