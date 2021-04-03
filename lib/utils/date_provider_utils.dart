@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class DateProviderUtils {
   static String getFormattedDate(DateTime date) {
     DateTime current = DateTime.now();
@@ -20,7 +22,9 @@ class DateProviderUtils {
       return 'Amanhã';
     }
 
-    return date.day.toString();
+    DateFormat format = DateFormat('dd MMM yy', 'pt_BR');
+
+    return format.format(date).toUpperCase();
   }
 
   static bool sameDay(DateTime date1, DateTime date2) {
