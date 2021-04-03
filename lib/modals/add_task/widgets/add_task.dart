@@ -24,7 +24,10 @@ class AddTask extends StatelessWidget {
       }
 
       var provider = Provider.of<TaskProvider>(context, listen: false);
-      provider.addTask(Task.createTask(text));
+      provider.addTask(Task.createTask(
+        title: text,
+        date: provider.selectedDate,
+      ));
 
       Navigator.of(context).pop();
 

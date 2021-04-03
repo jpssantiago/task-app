@@ -9,11 +9,11 @@ class Task {
     this.status,
   });
 
-  static Task createTask(String title) {
+  static Task createTask({String title, DateTime date}) {
     return Task(
       title: title,
       status: TaskStatus.active,
-      createdDate: DateTime.now(),
+      createdDate: date,
     );
   }
 }
