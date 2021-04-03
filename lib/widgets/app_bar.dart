@@ -11,7 +11,7 @@ AppBar buildAppBar(TaskProvider provider) {
     backgroundColor: Colors.white,
     elevation: 1, // Default = 4
     title: Text(
-      'Tarefas',
+      provider.getTasks().length.toString(), //'Tarefas'
       style: TextStyle(
         color: Colors.black,
       ),
