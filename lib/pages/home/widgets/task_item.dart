@@ -33,6 +33,17 @@ class TaskItem extends StatelessWidget {
       }
     }
 
+    Text showTimeLeft() {
+      return Text(
+        task.getTimeLeft(DateTime.now()),
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 12,
+          fontWeight: FontWeight.bold,
+        ),
+      );
+    }
+
     return ListTile(
       leading: Container(
         width: 36,
@@ -42,14 +53,12 @@ class TaskItem extends StatelessWidget {
           shape: BoxShape.circle,
         ),
         child: Center(
-          child: Text(
-            task.getTimeLeft(DateTime.now()),
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          child: task.status == TaskStatus.completed
+              ? Icon(
+                  Icons.check,
+                  color: Colors.white,
+                )
+              : showTimeLeft(),
         ),
       ),
       title: Text(
