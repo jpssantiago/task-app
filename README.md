@@ -1,16 +1,31 @@
-# task_app
+# Task app
 
-A new Flutter project.
+Task app made with Flutter.
 
-## Getting Started
+## Getting started
 
-This project is a starting point for a Flutter application.
+Clone this repo.
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/jpssantiago/task-app
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Install dependencies
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+```
+
+Enjoy :)
+
+```bash
+flutter run
+```
+
+## Images
+
+<img src="assets/readme_images/readme_image_0.png" alt="drawing" width="200"/>
+<img src="assets/readme_images/readme_image_1.png" alt="drawing" width="200"/>
+
+## License
+[MIT](LICENSE)
